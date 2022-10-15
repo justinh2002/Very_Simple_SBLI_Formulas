@@ -28,4 +28,25 @@ def Schmucker(M0,M1,M2,M3,M4):
     
     return qlist
 
-clear()
+   
+   
+import argparse
+# ===== the following applies in case we are running this in script mode =====
+if __name__ == "__main__":
+
+    parser = argparse.ArgumentParser(description='Some SBLI formulas.')
+    parser.add_argument("-formula", "--formula",
+                        choices=['DispThickness', 'chokedmdot', 'Schmucker'],
+                        default='chokedmdot', help="Calculates this  (default: %(default)s).")
+    args = parser.parse_args()
+
+ 
+    if args.formula == "DispThickness":
+        dispthickness(np.array(input('Enter list of densities: ')), float(input('Freestream density:'),np.array(input('Enter list of velocities: ')),float(input('Freestream velocity:') )))
+ 
+    if args.formula == "chokedmdot":
+        chokedmdot(float(input('Area of sonic region:'),float(input('Spressure in stagnation chamber:'),float(input('temperature in stagnation chamber:'))
+
+    if args.formula == "Schmucker":
+        Schmucker(float(input('M0:'),float(input('M1:'),float(input('M2:'),float(input('M3:'),float(input('M4:'))  #input Mach numbers
+#clear()
